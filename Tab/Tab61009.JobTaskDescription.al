@@ -1,7 +1,12 @@
-table 61008 "Job Task Description"
+/// <summary>
+/// Table Job Task Description (ID 61009).
+/// </summary>
+table 61009 "Job Task Description" // 50003
 {
-    Caption = 'Job Task Description';
+    CaptionML = DEU = 'Projekt Aufgabe Beschreibung', ENU = 'Job Task Description', DES = 'Projekt Aufgabe Beschreibung';
     DataClassification = ToBeClassified;
+    LookupPageId = 'Job Task Description';
+    DrillDownPageId = 'Job Task Description';
 
     fields
     {
