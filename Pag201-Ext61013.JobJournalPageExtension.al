@@ -1,4 +1,4 @@
-pageextension 61013 "JobJournalPageExtension" extends "Job Journal"
+pageextension 61013 "JobJournalPageExtension" extends "Job Journal" //201
 {
     layout
     {
@@ -173,4 +173,13 @@ pageextension 61013 "JobJournalPageExtension" extends "Job Journal"
             Visible = false;
         }
     }
+    actions
+    {
+        {
+        
+        modify(wi){
+            m
+        }}
+    }
+
 }
