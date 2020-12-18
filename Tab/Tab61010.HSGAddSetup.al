@@ -1,62 +1,82 @@
-table 61010 "HSG Add. Setup" //50007
+table 61010 "HSG Add. Setup"
 {
-    Caption = 'HSG Add. Setup';
-    DataClassification = ToBeClassified;
+    // version HSG,JOB
+
+    // HSG Hanse Solution GmbH
+    // Wichmannstraße 4 Hause 10 Mitte
+    // D-22607 Hamburg
+    // 
+    // Date    Module  ID  Description
+    // ========================================================================================
+    // 290818  JOB_00  CH  Created
+    // 030918  JOB_01  NM  new field Job Details Closed
+    // 060918  JOB_02  NM  new field 201 Job Details Reopen
+    // 180918  JOB_03  NM  new field 202 Job Details Wait
+
 
     fields
     {
-        field(1; Code; Code[10])
+        field(1; "Code"; Code[10])
         {
-            Caption = 'Code';
+            CaptionML = DEU = 'Code',
+                        ENU = 'Code';
             DataClassification = ToBeClassified;
         }
-        field(2; "E-Mail Log  Def. Sales Person"; Code[20])
+        field(100; "E-Mail Log  Def. Sales Person"; Code[20])
         {
-            CaptionML = ENU = 'E-Mail Log  Def. Sales Person', DEU = 'E-Mail Log Std. Verkäufer';
+            CaptionML = DEU = 'E-Mail Log Std. Verkäufer',
+                        ENU = 'E-Mail Log  Def.  Sales Person';
             DataClassification = ToBeClassified;
             TableRelation = "Salesperson/Purchaser".Code;
         }
-        field(3; "E-Mail Log Def. Contact"; Code[20])
+        field(101; "E-Mail Log Def. Contact"; Code[20])
         {
-            CaptionML = ENU = 'E-Mail Log Def. Contact', DEU = 'E-Mail Log Std. Kontakt';
+            CaptionML = DEU = 'E-Mail Log Std. Kontakt',
+                        ENU = 'E-Mail Log Def. Contact';
+            DataClassification = ToBeClassified;
             TableRelation = Contact."No.";
+        }
+        field(102; "Default E-Mail CC Address"; Text[100])
+        {
+            CaptionML = DEU = 'Standard E-Mail CC Adresse',
+                        ENU = 'Default E-Mail CC Address';
             DataClassification = ToBeClassified;
         }
-        field(4; "Default E-Mail CC Address"; Text[100])
+        field(103; "TEMP File Folder"; Text[200])
         {
-            CaptionML = ENU = 'Default E-Mail CC Address', DEU = 'Standard E-Mail CC Adresse';
+            Caption = 'TEMP File Folder';
             DataClassification = ToBeClassified;
         }
-        field(5; "TEMP File Folder"; Text[200])
+        field(200; "Job Details Closed"; Code[20])
         {
-            CaptionML = ENU = 'TEMP File Folder', DEU = 'TEMP Dateiordner';
-            DataClassification = ToBeClassified;
-        }
-        field(6; "Job Details Closed"; Code[20])
-        {
-            CaptionML = ENU = 'Job Details Closed', DEU = 'Aufgabe Geschlossen';
-            TableRelation = "Job Task Detail Status".Code;
-            DataClassification = ToBeClassified;
-        }
-        field(7; "Job Details Reopen"; Code[20])
-        {
-            CaptionML = ENU = 'Job Details Reopen', DEU = 'Aufgabe in Bearbeitung';
+            CaptionML = DEU = 'Aufgabe Geschlossen',
+                        ENU = 'Job Details Closed';
             DataClassification = ToBeClassified;
             TableRelation = "Job Task Detail Status".Code;
         }
-        field(8; "Job Details Wait"; Code[20])
+        field(201; "Job Details Reopen"; Code[20])
         {
-            CaptionML = ENU = 'Job Details Wait', DEU = 'Aufgabe Warte auf Kunde';
-            TableRelation = "Job Task Detail Status".Code;
+            Caption = 'Aufgabe in Bearbeitung';
             DataClassification = ToBeClassified;
+            TableRelation = "Job Task Detail Status".Code;
         }
-    }
-    keys
-    {
-        key(PK; Code)
+        field(202; "Job Details Wait"; Code[20])
         {
-            Clustered = true;
+            Caption = 'Aufgabe Warte auf Kunde';
+            DataClassification = ToBeClassified;
+            TableRelation = "Job Task Detail Status".Code;
         }
     }
 
+    keys
+    {
+        key(Key1; "Code")
+        {
+        }
+    }
+
+    fieldgroups
+    {
+    }
 }
+
