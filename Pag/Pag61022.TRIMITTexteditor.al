@@ -1,4 +1,4 @@
-page 61022 "TRIMIT Text editor"
+/* page 61022 "TRIMIT Text editor"
 {
     // version T7.0
 
@@ -205,3 +205,4 @@ page 61022 "TRIMIT Text editor"
     end;
 }
 
+ */

@@ -179,9 +179,9 @@ report 61019 "HSG Job - Quote_Order"
                 column(CompanyInfo__SWIFT_Code_; CompanyInfo."SWIFT Code")
                 {
                 }
-                column(CompanyInfo_Picture2; CompanyInfo.Picture2)
-                {
-                }
+                /*            column(CompanyInfo_Picture2; CompanyInfo.Picture2)
+                           {
+                           } */
                 column(CompanyInfo__Registration_No__; CompanyInfo."Registration No.")
                 {
                 }
@@ -388,13 +388,13 @@ report 61019 "HSG Job - Quote_Order"
 
                 FormatAddr.Customer(CustAddr, Customer_gRec);
 
-                if ShowBank2 and (CompanyInfo."Bank Branch No. 2" <> '') then begin
-                    CompanyInfo."Bank Name" := CompanyInfo."Bank Branch No. 2";
-                    CompanyInfo."Bank Branch No." := CompanyInfo."Bank Account No. 2";
-                    CompanyInfo."Bank Account No." := CompanyInfo."IBAN 2";
-                    CompanyInfo.IBAN := CompanyInfo."SWIFT Code 2";
-                    CompanyInfo."SWIFT Code" := CompanyInfo."SWIFT Code 2";
-                end;
+                // if ShowBank2 and (CompanyInfo."Bank Branch No. 2" <> '') then begin
+                //     CompanyInfo."Bank Name" := CompanyInfo."Bank Branch No. 2";
+                //     CompanyInfo."Bank Branch No." := CompanyInfo."Bank Account No. 2";
+                //     CompanyInfo."Bank Account No." := CompanyInfo."IBAN 2";
+                //     CompanyInfo.IBAN := CompanyInfo."SWIFT Code 2";
+                //     CompanyInfo."SWIFT Code" := CompanyInfo."SWIFT Code 2";
+                // end;
 
                 // -HSG_04
 
@@ -480,7 +480,7 @@ report 61019 "HSG Job - Quote_Order"
 
         FormatAddr.Company(CompanyAddr, CompanyInfo);
 
-        CompanyInfo.CALCFIELDS(Picture2);
+        //   CompanyInfo.CALCFIELDS(Picture2);
         CompanyInfo.CALCFIELDS(Picture);
     end;
 

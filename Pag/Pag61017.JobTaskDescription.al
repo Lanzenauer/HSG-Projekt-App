@@ -62,12 +62,12 @@ page 61017 "Job Task Description"
                 PromotedIsBig = true;
                 ShortCutKey = 'Ctrl+I';
 
-                trigger OnAction();
-                var
-                    EditorPageHandling_loc: Codeunit "Editor page Handling";
-                begin
-                    EditorPageHandling_loc.CallFromCommentLine(Rec, true);
-                end;
+                // trigger OnAction();
+                // var
+                //     EditorPageHandling_loc: Codeunit "Editor page Handling";
+                // begin
+                //     EditorPageHandling_loc.CallFromCommentLine(Rec, true);
+                // end;
             }
             action(Editor)
             {
@@ -79,12 +79,12 @@ page 61017 "Job Task Description"
                 PromotedIsBig = true;
                 ShortCutKey = 'Shift+Ctrl+E';
 
-                trigger OnAction();
-                var
-                    EditorPageHandling_loc: Codeunit "Editor page Handling";
-                begin
-                    EditorPageHandling_loc.CallFromCommentLine(Rec, false);
-                end;
+                // trigger OnAction();
+                // var
+                //     EditorPageHandling_loc: Codeunit "Editor page Handling";
+                // begin
+                //     EditorPageHandling_loc.CallFromCommentLine(Rec, false);
+                // end;
             }
         }
     }

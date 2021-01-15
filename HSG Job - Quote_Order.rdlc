@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Job_No_">
+          <DataField>Job_No_</DataField>
+        </Field>
+        <Field Name="indication_gCtx">
+          <DataField>indication_gCtx</DataField>
+        </Field>
+        <Field Name="CompanyAddr1">
+          <DataField>CompanyAddr1</DataField>
+        </Field>
+        <Field Name="CompanyAddr2">
+          <DataField>CompanyAddr2</DataField>
+        </Field>
+        <Field Name="CompanyAddr3">
+          <DataField>CompanyAddr3</DataField>
+        </Field>
+        <Field Name="CompanyAddr4">
+          <DataField>CompanyAddr4</DataField>
+        </Field>
+        <Field Name="CompanyAddr5">
+          <DataField>CompanyAddr5</DataField>
+        </Field>
+        <Field Name="CompanyAddr6">
+          <DataField>CompanyAddr6</DataField>
+        </Field>
+        <Field Name="Total_gCtx">
+          <DataField>Total_gCtx</DataField>
+        </Field>
+        <Field Name="CustAddr_1_">
+          <DataField>CustAddr_1_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_1_">
+          <DataField>CompanyAddr_1_</DataField>
+        </Field>
+        <Field Name="CustAddr_2_">
+          <DataField>CustAddr_2_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_2_">
+          <DataField>CompanyAddr_2_</DataField>
+        </Field>
+        <Field Name="CustAddr_3_">
+          <DataField>CustAddr_3_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_3_">
+          <DataField>CompanyAddr_3_</DataField>
+        </Field>
+        <Field Name="CustAddr_4_">
+          <DataField>CustAddr_4_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_4_">
+          <DataField>CompanyAddr_4_</DataField>
+        </Field>
+        <Field Name="CustAddr_5_">
+          <DataField>CustAddr_5_</DataField>
+        </Field>
+        <Field Name="CustAddr_6_">
+          <DataField>CustAddr_6_</DataField>
+        </Field>
+        <Field Name="Job__Bill_to_Customer_No__">
+          <DataField>Job__Bill_to_Customer_No__</DataField>
+        </Field>
+        <Field Name="SalesPersonText">
+          <DataField>SalesPersonText</DataField>
+        </Field>
+        <Field Name="RespResource_gRec_Name">
+          <DataField>RespResource_gRec_Name</DataField>
+        </Field>
+        <Field Name="CustAddr_7_">
+          <DataField>CustAddr_7_</DataField>
+        </Field>
+        <Field Name="CustAddr_8_">
+          <DataField>CustAddr_8_</DataField>
+        </Field>
+        <Field Name="WORKDATE">
+          <DataField>WORKDATE</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name_______CompanyInfo_Address_______CompanyInfo__Post_Code______CompanyInfo_City">
+          <DataField>CompanyInfo_Name_______CompanyInfo_Address_______CompanyInfo__Post_Code______CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="STRSUBSTNO_Text004_CopyText_">
+          <DataField>STRSUBSTNO_Text004_CopyText_</DataField>
+        </Field>
+        <Field Name="Job__No__">
+          <DataField>Job__No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Picture_Control140">
+          <DataField>CompanyInfo_Picture_Control140</DataField>
+        </Field>
+        <Field Name="STRSUBSTNO_Text004_CopyText__Control1">
+          <DataField>STRSUBSTNO_Text004_CopyText__Control1</DataField>
+        </Field>
+        <Field Name="Job__No___Control36">
+          <DataField>Job__No___Control36</DataField>
+        </Field>
+        <Field Name="WORKDATE_Control1000000073">
+          <DataField>WORKDATE_Control1000000073</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1000000074">
+          <DataField>CurrReport_PAGENO_Control1000000074</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Post_Code_________CompanyInfo_City">
+          <DataField>CompanyInfo__Post_Code_________CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Phone_No__">
+          <DataField>CompanyInfo__Phone_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Fax_No__">
+          <DataField>CompanyInfo__Fax_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Home_Page_">
+          <DataField>CompanyInfo__Home_Page_</DataField>
+        </Field>
+        <Field Name="CompanyInfo__E_Mail_">
+          <DataField>CompanyInfo__E_Mail_</DataField>
+        </Field>
+        <Field Name="CompanyInfo__VAT_Registration_No__">
+          <DataField>CompanyInfo__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Bank_Name_">
+          <DataField>CompanyInfo__Bank_Name_</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Bank_Account_No__">
+          <DataField>CompanyInfo__Bank_Account_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Bank_Branch_No__">
+          <DataField>CompanyInfo__Bank_Branch_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo_IBAN">
+          <DataField>CompanyInfo_IBAN</DataField>
+        </Field>
+        <Field Name="CompanyInfo__SWIFT_Code_">
+          <DataField>CompanyInfo__SWIFT_Code_</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Registration_No__">
+          <DataField>CompanyInfo__Registration_No__</DataField>
+        </Field>
+        <Field Name="Job__Bill_to_Customer_No__Caption">
+          <DataField>Job__Bill_to_Customer_No__Caption</DataField>
+        </Field>
+        <Field Name="WORKDATECaption">
+          <DataField>WORKDATECaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="Job_Task__Job_Task_No__Caption">
+          <DataField>Job_Task__Job_Task_No__Caption</DataField>
+        </Field>
+        <Field Name="Job_Task_DescriptionCaption">
+          <DataField>Job_Task_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000045Caption">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000045Caption</DataField>
+        </Field>
+        <Field Name="WORKDATE_Control1000000073Caption">
+          <DataField>WORKDATE_Control1000000073Caption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1000000074Caption">
+          <DataField>CurrReport_PAGENO_Control1000000074Caption</DataField>
+        </Field>
+        <Field Name="Projekt__aufgabe_Nr_Caption">
+          <DataField>Projekt__aufgabe_Nr_Caption</DataField>
+        </Field>
+        <Field Name="Job_Task_DescriptionCaption_Control1000000050">
+          <DataField>Job_Task_DescriptionCaption_Control1000000050</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000045Caption_Control1000000051">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000045Caption_Control1000000051</DataField>
+        </Field>
+        <Field Name="Tel__Caption">
+          <DataField>Tel__Caption</DataField>
+        </Field>
+        <Field Name="Fax_Caption">
+          <DataField>Fax_Caption</DataField>
+        </Field>
+        <Field Name="WebCaption">
+          <DataField>WebCaption</DataField>
+        </Field>
+        <Field Name="MailCaption">
+          <DataField>MailCaption</DataField>
+        </Field>
+        <Field Name="VAT_IDCaption">
+          <DataField>VAT_IDCaption</DataField>
+        </Field>
+        <Field Name="Directors_Caption">
+          <DataField>Directors_Caption</DataField>
+        </Field>
+        <Field Name="Christopher_Hähne__Sven_GrageCaption">
+          <DataField>Christopher_Hähne__Sven_GrageCaption</DataField>
+        </Field>
+        <Field Name="Commercial_court_HamburgCaption">
+          <DataField>Commercial_court_HamburgCaption</DataField>
+        </Field>
+        <Field Name="HRB_91246Caption">
+          <DataField>HRB_91246Caption</DataField>
+        </Field>
+        <Field Name="BankCaption">
+          <DataField>BankCaption</DataField>
+        </Field>
+        <Field Name="Branch_CodeCaption">
+          <DataField>Branch_CodeCaption</DataField>
+        </Field>
+        <Field Name="Account_Caption">
+          <DataField>Account_Caption</DataField>
+        </Field>
+        <Field Name="IBAN_Caption">
+          <DataField>IBAN_Caption</DataField>
+        </Field>
+        <Field Name="SWIFTCaption">
+          <DataField>SWIFTCaption</DataField>
+        </Field>
+        <Field Name="Tax_No_Caption">
+          <DataField>Tax_No_Caption</DataField>
+        </Field>
+        <Field Name="In_addition_our_general_terms_of_business_are_valid__see_http___www_hansesolution_com_index_php_contentID_8__Caption">
+          <DataField>In_addition_our_general_terms_of_business_are_valid__see_http___www_hansesolution_com_index_php_contentID_8__Caption</DataField>
+        </Field>
+        <Field Name="PageLoop_Number">
+          <DataField>PageLoop_Number</DataField>
+        </Field>
+        <Field Name="Text000">
+          <DataField>Text000</DataField>
+        </Field>
+        <Field Name="LineCaptJobTask_bl">
+          <DataField>LineCaptJobTask_bl</DataField>
+        </Field>
+        <Field Name="LineCaptDescript_bl">
+          <DataField>LineCaptDescript_bl</DataField>
+        </Field>
+        <Field Name="LineCaptAmnt_bl">
+          <DataField>LineCaptAmnt_bl</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price__">
+          <DataField>Job_Task__Schedule__Total_Price__</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price__Format">
+          <DataField>Job_Task__Schedule__Total_Price__Format</DataField>
+        </Field>
+        <Field Name="Job_Task__Job_Task_No__">
+          <DataField>Job_Task__Job_Task_No__</DataField>
+        </Field>
+        <Field Name="Job_Task_Description">
+          <DataField>Job_Task_Description</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000045">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000045</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000045Format">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000045Format</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000059">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000059</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000059Format">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000059Format</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000054">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000054</DataField>
+        </Field>
+        <Field Name="Job_Task__Schedule__Total_Price___Control1000000054Format">
+          <DataField>Job_Task__Schedule__Total_Price___Control1000000054Format</DataField>
+        </Field>
+        <Field Name="ContinueCaption">
+          <DataField>ContinueCaption</DataField>
+        </Field>
+        <Field Name="ContinueCaption_Control1000000058">
+          <DataField>ContinueCaption_Control1000000058</DataField>
+        </Field>
+        <Field Name="Total_Amount_excl__VAT__EUR_Caption">
+          <DataField>Total_Amount_excl__VAT__EUR_Caption</DataField>
+        </Field>
+        <Field Name="Job_Task_Job_No_">
+          <DataField>Job_Task_Job_No_</DataField>
+        </Field>
+        <Field Name="JobTaskDesc_gTxt">
+          <DataField>JobTaskDesc_gTxt</DataField>
+        </Field>
+        <Field Name="Quote_accepted__Date__Signature_Caption">
+          <DataField>Quote_accepted__Date__Signature_Caption</DataField>
+        </Field>
+        <Field Name="Signature_Number">
+          <DataField>Signature_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
