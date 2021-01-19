@@ -1,4 +1,7 @@
-table 61008 "Job Additional Costs"
+/// <summary>
+/// Table Job Additional Costs (ID 61040).
+/// </summary>
+table 61040 "Job Additional Costs"
 {
     // version HSG
 

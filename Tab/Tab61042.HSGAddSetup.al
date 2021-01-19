@@ -1,4 +1,7 @@
-table 61010 "HSG Add. Setup"
+/// <summary>
+/// Table HSG Add. Setup (ID 61042).
+/// </summary>
+table 61042 "HSG Add. Setup"
 {
     // version HSG,JOB
 

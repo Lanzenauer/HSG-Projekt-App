@@ -1,4 +1,7 @@
-table 61024 "Job Task Detail Status"
+/// <summary>
+/// Table Job Task Detail Status (ID 61048).
+/// </summary>
+table 61048 "Job Task Detail Status"
 {
     // version JOB
 

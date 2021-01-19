@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Additional Setup (ID 61016).
+/// </summary>
 page 61016 "Additional Setup"
 {
     // version HSG,JOB

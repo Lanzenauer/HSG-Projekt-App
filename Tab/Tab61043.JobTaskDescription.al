@@ -1,4 +1,7 @@
-table 61021 "Job Task Description"
+/// <summary>
+/// Table Job Task Description (ID 61043).
+/// </summary>
+table 61043 "Job Task Description"
 {
     // version HSG
 

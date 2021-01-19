@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension ResJournalLineExtension (ID 61004) extends Record Res. Journal Line //207.
 /// </summary>
-tableextension 61004 "ResJournalLineExtension" extends "Res. Journal Line" //207
+tableextension 61065 "ResJournalLineExtension" extends "Res. Journal Line" //207
 {
     fields
     {

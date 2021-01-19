@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Job Additional Cost (ID 61014).
+/// </summary>
 page 61014 "Job Additional Cost"
 {
     // version HSG

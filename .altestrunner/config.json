@@ -1,0 +1,11 @@
+{
+    "launchConfigName":  "Your own server",
+    "containerResultPath":  "",
+    "userName":  "",
+    "securePassword":  "",
+    "vmUserName":  "",
+    "vmSecurePassword":  "",
+    "remoteContainerName":  "",
+    "dockerHost":  "",
+    "newPSSessionOptions":  ""
+}

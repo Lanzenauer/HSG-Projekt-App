@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension ResLedgerEntryExtension (ID 61003) extends Record Res. Ledger Entry //203.
 /// </summary>
-tableextension 61003 "ResLedgerEntryExtension" extends "Res. Ledger Entry" //203
+tableextension 61064 "ResLedgerEntryExtension" extends "Res. Ledger Entry" //203
 {
     fields
     {

@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Job Task Detail Status (ID 61024).
+/// </summary>
 page 61024 "Job Task Detail Status"
 {
     // version JOB
@@ -35,11 +38,11 @@ page 61024 "Job Task Detail Status"
                 {
                     Visible = false;
                 }
-                field("Status Option"; "Status Option")
+                field("Status Option"; Rec."Status Option")
                 {
                     Visible = false;
                 }
-                field("Status Extended"; "Status Extended")
+                field("Status Extended"; Rec."Status Extended")
                 {
                     Visible = false;
                 }

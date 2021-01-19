@@ -22,5 +22,6 @@
   ],
   "contextSensitiveHelpUrl": "https://HSG.com/help/",
   "showMyCode": true,
-  "runtime": "6.0"
+  "runtime": "6.0",
+  "target": "OnPrem"
 }

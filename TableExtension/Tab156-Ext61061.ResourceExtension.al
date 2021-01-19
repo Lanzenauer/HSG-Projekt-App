@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension "ResourceExtension" (ID 61000) extends Record Resource.
 /// </summary>
-tableextension 61000 ResourceExtension extends Resource //156
+tableextension 61061 ResourceExtension extends Resource //156
 {
     fields
     {

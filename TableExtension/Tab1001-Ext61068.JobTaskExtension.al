@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension "JobTaskExtension" (ID 61006) extends Record Job Task //1001.
 /// </summary>
-tableextension 61006 JobTaskExtension extends "Job Task" //1001
+tableextension 61068 JobTaskExtension extends "Job Task" //1001
 {
     fields
     {

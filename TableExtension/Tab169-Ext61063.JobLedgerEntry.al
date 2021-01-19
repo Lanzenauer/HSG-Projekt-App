@@ -1,4 +1,4 @@
-tableextension 61002 "JobLedgerEntry" extends "Job Ledger Entry" //169
+tableextension 61063 "JobLedgerEntry" extends "Job Ledger Entry" //169
 {
     fields
     {

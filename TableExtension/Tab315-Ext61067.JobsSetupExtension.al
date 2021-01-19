@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension JobsSetupExtension (ID 61005) extends Record Jobs Setup //315.
 /// </summary>
-tableextension 61005 "JobsSetupExtension" extends "Jobs Setup" //315
+tableextension 61067 "JobsSetupExtension" extends "Jobs Setup" //315
 {
     fields
     {

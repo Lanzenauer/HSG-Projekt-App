@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension JobJournalLineExtension (ID 61000) extends Record Job Journal Line //210.
 /// </summary>
-tableextension 61007 "JobJournalLineExtension" extends "Job Journal Line" //210
+tableextension 61066 "JobJournalLineExtension" extends "Job Journal Line" //210
 {
     fields
     {

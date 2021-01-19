@@ -1,4 +1,7 @@
-table 61009 "Classification"
+/// <summary>
+/// Table Classification (ID 61041).
+/// </summary>
+table 61041 "Classification"
 {
     // version HSG
 

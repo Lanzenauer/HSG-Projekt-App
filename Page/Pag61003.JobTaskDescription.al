@@ -1,4 +1,7 @@
-page 61017 "Job Task Description"
+/// <summary>
+/// Page Job Task Description (ID 61017).
+/// </summary>
+page 61003 "Job Task Description"
 {
     // version HSG
 
