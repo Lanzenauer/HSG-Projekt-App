@@ -59,17 +59,17 @@ page 61009 "Job Task Detail Search"
                         end;
                     end;
                 }
-                field(Search_Ctl; Search_gTxt)
-                {
-                    CaptionML = DEU = 'Suchbegriffe',
-                                ENU = 'Search Terms';
-                    ColumnSpan = 4;
+                // field(Search_Ctl; Search_gTxt)
+                // {
+                //     CaptionML = DEU = 'Suchbegriffe',
+                //                 ENU = 'Search Terms';
+                //     ColumnSpan = 4;
 
-                    trigger OnValidate();
-                    begin
-                        Search_lFnc;
-                    end;
-                }
+                //     trigger OnValidate();
+                //     begin
+                //         Search_lFnc;
+                //     end;
+                // }
             }
             repeater(Group)
             {
@@ -171,11 +171,11 @@ page 61009 "Job Task Detail Search"
         }
     }
 
-    // var
-    //     Search_gTxt: Text;
-    //     JobFilter_gCod: Code[20];
-    //     ShowVar: Boolean;
-    //     VarDimText: Text;
+    var
+        Search_gTxt: Text;
+        JobFilter_gCod: Code[20];
+        ShowVar: Boolean;
+        VarDimText: Text;
 
     // procedure Search_lFnc() Result_rBln: Boolean;
     // var

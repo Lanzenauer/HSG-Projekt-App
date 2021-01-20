@@ -43,23 +43,23 @@ page 61017 "Job Task Detail Add. Text"
     {
     }
 
-    trigger OnAfterGetCurrRecord();
-    begin
-        if LastRecID <> RecID then
-            LoadHTMLText();
-        LastRecID := RecID;
-    end;
+    // trigger OnAfterGetCurrRecord();
+    // begin
+    //     if LastRecID <> RecID then
+    //         LoadHTMLText();
+    //     LastRecID := RecID;
+    // end;
 
-    trigger OnAfterGetRecord();
-    begin
-        LoadHTMLText;
-    end;
+    // trigger OnAfterGetRecord();
+    // begin
+    //     LoadHTMLText;
+    // end;
 
-    trigger OnInit();
-    begin
-        HSGSetup_gRec.GET;
-        editable_gBol := true;
-    end;
+    // trigger OnInit();
+    // begin
+    //     HSGSetup_gRec.GET;
+    //     editable_gBol := true;
+    // end;
 
     // trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     // begin
@@ -141,11 +141,11 @@ page 61017 "Job Task Detail Add. Text"
         CurrPage.UPDATE(false);
     end;
 
-    procedure UpdatePage_gFnc();
-    begin
-        LoadHTMLText;
-        //CurrPage.UPDATE();
-    end;
+    // procedure UpdatePage_gFnc();
+    // begin
+    //     LoadHTMLText;
+    //     //CurrPage.UPDATE();
+    // end;
 
     procedure FindSet_gFnc();
     begin

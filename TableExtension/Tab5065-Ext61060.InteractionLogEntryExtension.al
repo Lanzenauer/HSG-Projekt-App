@@ -66,6 +66,13 @@ tableextension 61060 InteractionLogEntryExtension extends "Interaction Log Entry
             DataClassification = ToBeClassified;
         }
     }
+    procedure CreateTodo();
+    var
+        TempTodo: Record "To-do" temporary;
+    begin
+        TempTodo.CreateToDoFromInteractLogEntry(Rec)
+    end;
+
     var
         JobTaskDetMgnt_gCdu: Codeunit "Job Task Detail Mgnt.";
 

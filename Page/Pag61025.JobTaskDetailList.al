@@ -176,14 +176,12 @@ page 61025 "Job Task Detail List"
         }
         area(factboxes)
         {
-            CaptionML = DEU='Factbox',
-                        ENU='Factbox';
             part(Control1000000028; "Customer Statistics FactBox")
             {
                 SubPageLink = "No." = FIELD("Job No.");
                 Visible = false;
             }
-            part(Control1000000027; "Job Task Detail History FactBox")
+            part(Control1000000027; "Job Task Detail History FactBo")
             {
                 SubPageLink = "Job Task Detail ID" = FIELD("Job Task Detail ID");
                 Visible = false;

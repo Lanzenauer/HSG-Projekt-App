@@ -21,7 +21,7 @@ page 61008 "Job Task Detail Card"
 
     CaptionML = DEU = 'Projektunteraufgabe Karte',
                 ENU = 'Job Task Detail Card';
-    DataCaptionExpression = FORMAT(Rec."Job Task Detail ID") + ' - ' + Rec."Job Task Description" + ' - ' + Rec."Short Description";
+    DataCaptionExpression = FORMAT("Job Task Detail ID") + ' - ' + "Job Task Description" + ' - ' + "Short Description";
     DataCaptionFields = "Job No.", "Job Task No.", "Job Task Detail ID";
     PageType = Card;
     RefreshOnActivate = true;
@@ -35,13 +35,13 @@ page 61008 "Job Task Detail Card"
             {
                 CaptionML = DEU = 'Allgemein',
                             ENU = 'General';
-                field("Job Task Detail ID"; Rec."Job Task Detail ID")
+                field("Job Task Detail ID"; "Job Task Detail ID")
                 {
                     Editable = false;
                     Enabled = false;
                     Importance = Additional;
                 }
-                field("Job No."; Rec."Job No.")
+                field("Job No."; "Job No.")
                 {
                     Editable = editable_gBol;
 
@@ -54,10 +54,10 @@ page 61008 "Job Task Detail Card"
                     begin
                         UpdateDescriptionSolution_lFnc(true);
 
-                        if Rec."Job No." > '' then begin
-                            Rec."Contact No." := '';
+                        if "Job No." > '' then begin
+                            "Contact No." := '';
                             ContactName_gTxt := '';
-                            Job_lRec.GET(Rec."Job No.");
+                            Job_lRec.GET("Job No.");
                             ContBusinessRelation_lRec.RESET;
                             ContBusinessRelation_lRec.SETCURRENTKEY("Link to Table", "No.");
                             ContBusinessRelation_lRec.SETRANGE("Link to Table", ContBusinessRelation_lRec."Link to Table"::Customer);
@@ -67,7 +67,7 @@ page 61008 "Job Task Detail Card"
                                 Cont_lRec.SETRANGE(Type, Cont_lRec.Type::Person);
                                 if Cont_lRec.COUNT = 1 then begin
                                     Cont_lRec.FINDFIRST;
-                                    Rec.VALIDATE("Contact No.", Cont_lRec."No.");
+                                    VALIDATE("Contact No.", Cont_lRec."No.");
                                     ContactName_gTxt := Cont_lRec.Name;
                                 end;
                             end;
@@ -85,12 +85,12 @@ page 61008 "Job Task Detail Card"
                         Position_lTxt: Text;
                         JobTask_lRec: Record "Job Task";
                     begin
-                        JobTask_lRec.SETRANGE("Job No.", Rec."Job No.");
-                        if JobTask_lRec.GET(Rec."Job No.", Rec."Job Task No.") then;
+                        JobTask_lRec.SETRANGE("Job No.", "Job No.");
+                        if JobTask_lRec.GET("Job No.", "Job Task No.") then;
                         if PAGE.RUNMODAL(50035, JobTask_lRec) = ACTION::LookupOK then begin
                             JobTaskName_gTxt := JobTask_lRec.Description;
-                            if Rec."Job Task No." <> JobTask_lRec."Job Task No." then begin
-                                Rec.VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
+                            if "Job Task No." <> JobTask_lRec."Job Task No." then begin
+                                VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
                             end;
                         end;
 
@@ -109,15 +109,15 @@ page 61008 "Job Task Detail Card"
                         if JobTaskName_gTxt = '' then begin
                             exit;
                         end;
-                        JobTask_lRec.SETRANGE("Job No.", Rec."Job No.");
-                        if not JobTask_lRec.GET(Rec."Job No.", JobTaskName_gTxt) then begin
+                        JobTask_lRec.SETRANGE("Job No.", "Job No.");
+                        if not JobTask_lRec.GET("Job No.", JobTaskName_gTxt) then begin
                             JobTask_lRec.SETFILTER(Description, '%1', '@*' + JobTaskName_gTxt + '*');
                             if JobTask_lRec.COUNT = 1 then begin
                                 JobTask_lRec.FINDFIRST;
                                 //JobTaskName_gTxt:= JobTask_lRec.Description;
-                                JobTaskName_gTxt := '[' + Rec."Job Task No." + '] ' + JobTask_lRec.Description;
-                                if Rec."Job Task No." <> JobTask_lRec."Job Task No." then begin
-                                    Rec.VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
+                                JobTaskName_gTxt := '[' + "Job Task No." + '] ' + JobTask_lRec.Description;
+                                if "Job Task No." <> JobTask_lRec."Job Task No." then begin
+                                    VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
                                 end;
                             end else begin
                                 if not JobTask_lRec.FINDFIRST then begin
@@ -125,23 +125,23 @@ page 61008 "Job Task Detail Card"
                                 end;
                                 if PAGE.RUNMODAL(50035, JobTask_lRec) = ACTION::LookupOK then begin
                                     //JobTaskName_gTxt:= JobTask_lRec.Description;
-                                    JobTaskName_gTxt := '[' + Rec."Job Task No." + '] ' + JobTask_lRec.Description;
-                                    if Rec."Job Task No." <> JobTask_lRec."Job Task No." then begin
-                                        Rec.VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
+                                    JobTaskName_gTxt := '[' + "Job Task No." + '] ' + JobTask_lRec.Description;
+                                    if "Job Task No." <> JobTask_lRec."Job Task No." then begin
+                                        VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
                                     end;
                                 end;
                             end;
                         end else begin
                             //JobTaskName_gTxt:= JobTask_lRec.Description;
-                            JobTaskName_gTxt := '[' + Rec."Job Task No." + '] ' + JobTask_lRec.Description;
-                            if Rec."Job Task No." <> JobTask_lRec."Job Task No." then begin
-                                Rec.VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
+                            JobTaskName_gTxt := '[' + "Job Task No." + '] ' + JobTask_lRec.Description;
+                            if "Job Task No." <> JobTask_lRec."Job Task No." then begin
+                                VALIDATE("Job Task No.", JobTask_lRec."Job Task No.");
                             end;
                         end;
                         UpdateDescriptionSolution_lFnc(true);
                     end;
                 }
-                field("Job Task No."; Rec."Job Task No.")
+                field("Job Task No."; "Job Task No.")
                 {
                     Editable = editable_gBol;
                     Visible = false;
@@ -153,23 +153,23 @@ page 61008 "Job Task Detail Card"
                     begin
                     end;
                 }
-                field("Job Task Description"; Rec."Job Task Description")
+                field("Job Task Description"; "Job Task Description")
                 {
                     Editable = editable_gBol;
-                    Enabled = (Rec."Job Task No." = '');
+                    Enabled = ("Job Task No." = '');
                     Importance = Additional;
                 }
-                field(Arranger; Rec.Arranger)
-                {
-                    Editable = editable_gBol;
-                    Importance = Additional;
-                }
-                field(Reproducible; Rec.Reproducible)
+                field(Arranger; Arranger)
                 {
                     Editable = editable_gBol;
                     Importance = Additional;
                 }
-                field("Last update"; Rec."Last update")
+                field(Reproducible; Reproducible)
+                {
+                    Editable = editable_gBol;
+                    Importance = Additional;
+                }
+                field("Last update"; "Last update")
                 {
                     Importance = Additional;
                 }
@@ -186,8 +186,8 @@ page 61008 "Job Task Detail Card"
                         Job_lRec: Record Job;
                         Count_lInt: Integer;
                     begin
-                        if Rec."Contact No." > '' then begin
-                            Cont_lRec.GET(Rec."Contact No.");
+                        if "Contact No." > '' then begin
+                            Cont_lRec.GET("Contact No.");
                             PAGE.RUNMODAL(5050, Cont_lRec);
                         end;
                     end;
@@ -199,7 +199,7 @@ page 61008 "Job Task Detail Card"
                         Job_lRec: Record Job;
                         Count_lInt: Integer;
                     begin
-                        Job_lRec.GET(Rec."Job No.");
+                        Job_lRec.GET("Job No.");
                         ContBusinessRelation_lRec.RESET;
                         ContBusinessRelation_lRec.SETCURRENTKEY("Link to Table", "No.");
                         ContBusinessRelation_lRec.SETRANGE("Link to Table", ContBusinessRelation_lRec."Link to Table"::Customer);
@@ -208,7 +208,7 @@ page 61008 "Job Task Detail Card"
                             Cont_lRec.SETRANGE("Company No.", ContBusinessRelation_lRec."Contact No.");
                             Cont_lRec.SETRANGE(Type, Cont_lRec.Type::Person);
                             if PAGE.RUNMODAL(0, Cont_lRec) = ACTION::LookupOK then begin
-                                Rec.VALIDATE("Contact No.", Cont_lRec."No.");
+                                VALIDATE("Contact No.", Cont_lRec."No.");
                                 ContactName_gTxt := Cont_lRec.Name;
                             end;
                         end;
@@ -222,7 +222,7 @@ page 61008 "Job Task Detail Card"
                         Count_lInt: Integer;
                     begin
                         if ContactName_gTxt > '' then begin
-                            Job_lRec.GET(Rec."Job No.");
+                            Job_lRec.GET("Job No.");
                             ContBusinessRelation_lRec.RESET;
                             ContBusinessRelation_lRec.SETCURRENTKEY("Link to Table", "No.");
                             ContBusinessRelation_lRec.SETRANGE("Link to Table", ContBusinessRelation_lRec."Link to Table"::Customer);
@@ -234,12 +234,12 @@ page 61008 "Job Task Detail Card"
                                 Count_lInt := Cont_lRec.COUNT;
                                 if Count_lInt = 1 then begin
                                     Cont_lRec.FINDFIRST;
-                                    Rec.VALIDATE("Contact No.", Cont_lRec."No.");
+                                    VALIDATE("Contact No.", Cont_lRec."No.");
                                     ContactName_gTxt := Cont_lRec.Name;
                                 end else begin
                                     if Count_lInt > 1 then begin
                                         if PAGE.RUNMODAL(0, Cont_lRec) = ACTION::LookupOK then begin
-                                            Rec.VALIDATE("Contact No.", Cont_lRec."No.");
+                                            VALIDATE("Contact No.", Cont_lRec."No.");
                                             ContactName_gTxt := Cont_lRec.Name;
                                         end;
                                     end else begin
@@ -259,7 +259,7 @@ page 61008 "Job Task Detail Card"
                                                 Cont_lRec.RESET;
                                                 PAGE.RUNMODAL(5050, Cont_lRec);
                                                 Cont_lRec.GET(Cont_lRec."No.");
-                                                Rec.VALIDATE("Contact No.", Cont_lRec."No.");
+                                                VALIDATE("Contact No.", Cont_lRec."No.");
                                                 ContactName_gTxt := Cont_lRec.Name;
                                                 CurrPage.UPDATE(true);
                                             end;
@@ -270,25 +270,25 @@ page 61008 "Job Task Detail Card"
                         end;
                     end;
                 }
-                field("Short Description"; Rec."Short Description")
+                field("Short Description"; "Short Description")
                 {
                     Editable = editable_gBol;
                 }
-                field("External Document No."; Rec."External Document No.")
-                {
-                    Editable = editable_gBol;
-                    Importance = Additional;
-                }
-                field(Category; Rec.Category)
+                field("External Document No."; "External Document No.")
                 {
                     Editable = editable_gBol;
                     Importance = Additional;
                 }
-                field(Priority_Ctl; Rec.Priority)
+                field(Category; Category)
+                {
+                    Editable = editable_gBol;
+                    Importance = Additional;
+                }
+                field(Priority_Ctl; Priority)
                 {
                     Editable = editable_gBol;
                 }
-                field(Status; Rec.Status)
+                field(Status; Status)
                 {
                     Editable = editable_gBol;
                     Importance = Promoted;
@@ -296,53 +296,53 @@ page 61008 "Job Task Detail Card"
                     trigger OnValidate();
                     begin
                         //-HSG_06
-                        if Rec.Status = HSGSetup_gRec."Job Details Closed" then
+                        if Status = HSGSetup_gRec."Job Details Closed" then
                             editable_gBol := false
                         else
                             editable_gBol := true;
-                        if Rec.Status = HSGSetup_gRec."Job Details Wait" then
-                            Rec."Waiting on Customer" := true;
+                        if Status = HSGSetup_gRec."Job Details Wait" then
+                            "Waiting on Customer" := true;
                         CurrPage.UPDATE;
                         //+HSG_06
                     end;
                 }
-                field(WaitingonCustomer_Ctl; Rec."Waiting on Customer")
+                field(WaitingonCustomer_Ctl; "Waiting on Customer")
                 {
                     Editable = editable_gBol;
                     Visible = false;
                 }
-                field("Message Date"; Rec."Message Date")
+                field("Message Date"; "Message Date")
                 {
                     Editable = false;
                     Importance = Additional;
                 }
-                field("Planned Date_Ctl"; Rec."Planned Date")
+                field("Planned Date_Ctl"; "Planned Date")
                 {
                     Editable = editable_gBol;
                     Importance = Standard;
                 }
-                field("Due Date"; Rec."Due Date")
+                field("Due Date"; "Due Date")
                 {
                     Editable = editable_gBol;
                     Importance = Promoted;
                 }
-                field("Fixed Date_Ctl"; Rec."Fixed Date")
+                field("Fixed Date_Ctl"; "Fixed Date")
                 {
                     Editable = editable_gBol;
                     Importance = Additional;
                 }
-                field("Estimated Quantity_Ctl"; Rec."Estimated Quantity")
+                field("Estimated Quantity_Ctl"; "Estimated Quantity")
                 {
                     Editable = editable_gBol;
                     Importance = Promoted;
                 }
-                field("Quote Quantity"; Rec."Quote Quantity")
+                field("Quote Quantity"; "Quote Quantity")
                 {
                     CaptionML = DEU = 'Menge Angebot',
                                 ENU = 'quantity quote';
                     Editable = editable_gBol;
                 }
-                field(RemainingQuantity_Ctl; Rec."Remaining Quantity")
+                field(RemainingQuantity_Ctl; "Remaining Quantity")
                 {
                     Editable = editable_gBol;
                     Importance = Additional;
@@ -357,7 +357,7 @@ page 61008 "Job Task Detail Card"
                     var
                         Resource_lRec: Record Resource;
                     begin
-                        if Resource_lRec.GET(Rec."Processing by") then;
+                        if Resource_lRec.GET("Processing by") then;
                         // -HSG_08
                         Resource_lRec.SETRANGE("Show in Statistics", true);
                         // +HSG_08
@@ -365,8 +365,8 @@ page 61008 "Job Task Detail Card"
                         if PAGE.RUNMODAL(0, Resource_lRec) = ACTION::LookupOK then begin
                             if CurrPage.EDITABLE = true then begin
                                 ProcessingBy_gTxt := '[' + Resource_lRec."No." + '] ' + Resource_lRec.Name;
-                                if Rec."Processing by" <> Resource_lRec."No." then
-                                    Rec.VALIDATE("Processing by", Resource_lRec."No.");
+                                if "Processing by" <> Resource_lRec."No." then
+                                    VALIDATE("Processing by", Resource_lRec."No.");
                             end;
                         end;
                     end;
@@ -395,24 +395,24 @@ page 61008 "Job Task Detail Card"
                                 if PAGE.RUNMODAL(0, Resource_lRec) = ACTION::LookupOK then begin
                                     if CurrPage.EDITABLE = true then begin
                                         ProcessingBy_gTxt := '[' + Resource_lRec."No." + '] ' + Resource_lRec.Name;
-                                        if Rec."Processing by" <> Resource_lRec."No." then
-                                            Rec.VALIDATE("Processing by", Resource_lRec."No.");
+                                        if "Processing by" <> Resource_lRec."No." then
+                                            VALIDATE("Processing by", Resource_lRec."No.");
                                     end;
                                 end;
                             end;
                         end else begin
                             ProcessingBy_gTxt := '[' + Resource_lRec."No." + '] ' + Resource_lRec.Name;
                         end;
-                        if Rec."Processing by" <> Resource_lRec."No." then
-                            Rec.VALIDATE("Processing by", Resource_lRec."No.");
+                        if "Processing by" <> Resource_lRec."No." then
+                            VALIDATE("Processing by", Resource_lRec."No.");
                     end;
                 }
-                field("No Of E-Mails"; Rec."No Of E-Mails")
+                field("No Of E-Mails"; "No Of E-Mails")
                 {
                     DrillDownPageID = "Interaction Log Entries Mail";
                 }
             }
-            part(Description_Ctl; Rec."Job Task Detail Add. Text")
+            part(Description_Ctl; "Job Task Detail Add. Text")
             {
                 CaptionML = DEU = 'Beschreibung',
                             ENU = 'Description';
@@ -435,7 +435,7 @@ page 61008 "Job Task Detail Card"
         }
         area(factboxes)
         {
-            Caption = 'FactBox';
+
             part(Control1000000038; "Customer Statistics FactBox")
             {
                 SubPageLink = "No." = FIELD("Job No.");
@@ -547,7 +547,7 @@ page 61008 "Job Task Detail Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 RunObject = Page "Job Task Description";
-                                RunPageLink = "Table Name" = CONST("Job Task Description"),
+                RunPageLink = "Table Name" = CONST("Job Task Description"),
                               "Job No." = FIELD("Job No."),
                               "Job Task No." = FIELD("Job Task No.");
             }
@@ -572,7 +572,7 @@ page 61008 "Job Task Detail Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 RunObject = Page "Job Task Detail Objects";
-                                RunPageLink = "Job Task Detail ID" = FIELD("Job Task Detail ID"),
+                RunPageLink = "Job Task Detail ID" = FIELD("Job Task Detail ID"),
                               "Job No." = FIELD("Job No."),
                               "Job Task No." = FIELD("Job Task No.");
             }
@@ -595,7 +595,7 @@ page 61008 "Job Task Detail Card"
                 Promoted = true;
                 PromotedCategory = "Report";
                 RunObject = Page "Job Task Detail History";
-                                RunPageLink = "Job Task Detail ID" = FIELD("Job Task Detail ID"),
+                RunPageLink = "Job Task Detail ID" = FIELD("Job Task Detail ID"),
                               "Job No." = FIELD("Job No."),
                               "Job Task No." = FIELD("Job Task No.");
             }
@@ -755,12 +755,12 @@ page 61008 "Job Task Detail Card"
     var
         JobTaskDetail_TMP_lRec: Record "Job Task Detail" temporary;
         JobSubTaskCreateNote_lPag: Page "Job Task Detail Create Note";
-                                       V_lTxt: Text;
-                                       Modified_lBln: Boolean;
-                                       JobTaskDetailHistory_lRec: Record "Job Task Detail History";
-                                       JobTaskDetailSubHistory_lPag: Page "Job Task Detail Sub History";
-                                       Filter1_lDtm: DateTime;
-                                       Filter2_lDtm: DateTime;
+        V_lTxt: Text;
+        Modified_lBln: Boolean;
+        JobTaskDetailHistory_lRec: Record "Job Task Detail History";
+        JobTaskDetailSubHistory_lPag: Page "Job Task Detail Sub History";
+        Filter1_lDtm: DateTime;
+        Filter2_lDtm: DateTime;
     begin
         JobTaskDetail_TMP_lRec.COPY(JobTaskDetail_vRec);
         JobTaskDetail_TMP_lRec.INSERT;
@@ -850,7 +850,7 @@ page 61008 "Job Task Detail Card"
     var
         Position_lTxt: Text;
         JobTaskDetailAddTextCard_lPag: Page "Job Task Detail Add. Text Card";
-                                           TextNo_lInt: Integer;
+        TextNo_lInt: Integer;
     begin
         Position_lTxt := JobTaskDetail_iRec.GETPOSITION(false);
         if ShowDescription_iBln then begin
@@ -887,4 +887,3 @@ page 61008 "Job Task Detail Card"
         //+HSG_06
     end;
 }
-

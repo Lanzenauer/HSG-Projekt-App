@@ -338,17 +338,17 @@ page 61000 "Interaction Log Entries Mail"
                         JobDetailMgt_gCdu.CreateNewJob_gFnc(Rec); // JOB_02
                     end;
                 }
-                action("E-Mails importieren")
-                {
-                    CaptionML = DEU = 'E-Mails importieren',
-                                ENU = 'Import E-Mails';
-                    Image = ImportExport;
+                // action("E-Mails importieren")
+                // {
+                //     CaptionML = DEU = 'E-Mails importieren',
+                //                 ENU = 'Import E-Mails';
+                //     Image = ImportExport;
 
-                    trigger OnAction();
-                    begin
-                        EMailLoggingDispatcher_gCdu.RunEMailBatch_gFnc;
-                    end;
-                }
+                //     trigger OnAction();
+                //     begin
+                //         EMailLoggingDispatcher_gCdu.RunEMailBatch_gFnc;
+                //     end;
+                // }
                 action(AssignJobTaskIDManually)
                 {
                     CaptionML = DEU = 'Projekunteraufgabe ID Manuell Zuordnen',
@@ -477,7 +477,7 @@ page 61000 "Interaction Log Entries Mail"
         "---": Integer;
         InteractionTemplate_gRec: Record "Interaction Template Setup";
         HSGFunctions_gCdu: Codeunit "HSG Functions";
-        EMailLoggingDispatcher_gCdu: Codeunit "E-Mail Logging Dispatcher_";
+        // EMailLoggingDispatcher_gCdu: Codeunit "E-Mail Logging Dispatcher_";
         JobDetailMgt_gCdu: Codeunit "Job Task Detail Mgnt.";
         ConfirmAlreadyAssigned_gCtx: TextConst DEU = 'Für Protokollposten %1 existiert bereits eine Zuordnung - trotzdem fortfahren?', ENU = 'There is an assigenment for interaction log entry %1 already - continue anyway?';
         Err_Abort_gCtx: Label 'Abbruch';
